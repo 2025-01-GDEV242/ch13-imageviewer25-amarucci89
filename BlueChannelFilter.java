@@ -1,18 +1,18 @@
 import java.awt.Color;
 
-/**Red Channel Filter
- * An image filter that makes the color red appear lighter.
+/**Blue Channel Filter
+ * An image filter that makes the color blue appear lighter.
  *
  * @author Alessandro Marucci
  * @version 04.21.2025
  */
-public class RedChannelFilter extends Filter
+public class BlueChannelFilter extends Filter
 {
     /**
-     * Constructor for objects of class RedChannelFilter.
+     * Constructor for objects of class BlueChannelFilter.
      * @param name The name of the filter.
      */
-    public RedChannelFilter(String name)
+    public BlueChannelFilter(String name)
     {
         super(name);
     }
@@ -31,9 +31,9 @@ public class RedChannelFilter extends Filter
                 int avg = (pix.getRed() + pix.getGreen() + pix.getBlue()) / 3;
                 image.setPixel(x, y, new Color(avg, avg, avg));
                 
-                if(pix.getRed() > 200 && pix.getGreen() < 50 && pix.getBlue() < 50) // If color is red...
+                if(pix.getRed() < 50 && pix.getGreen() < 50 && pix.getBlue() > 200) // If color is blue...
                 {
-                    image.setPixel(x, y, Color.WHITE); // Convert red pixels to white.
+                    image.setPixel(x, y, Color.WHITE); // Convert blue pixels to white.
                 }
             }
         }

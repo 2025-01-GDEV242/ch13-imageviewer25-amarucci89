@@ -1,18 +1,18 @@
 import java.awt.Color;
 
-/**Red Channel Filter
- * An image filter that makes the color red appear lighter.
+/**Green Channel Filter
+ * An image filter that makes the color green appear lighter.
  *
  * @author Alessandro Marucci
  * @version 04.21.2025
  */
-public class RedChannelFilter extends Filter
+public class GreenChannelFilter extends Filter
 {
     /**
-     * Constructor for objects of class RedChannelFilter.
+     * Constructor for objects of class GreenChannelFilter.
      * @param name The name of the filter.
      */
-    public RedChannelFilter(String name)
+    public GreenChannelFilter(String name)
     {
         super(name);
     }
@@ -31,9 +31,9 @@ public class RedChannelFilter extends Filter
                 int avg = (pix.getRed() + pix.getGreen() + pix.getBlue()) / 3;
                 image.setPixel(x, y, new Color(avg, avg, avg));
                 
-                if(pix.getRed() > 200 && pix.getGreen() < 50 && pix.getBlue() < 50) // If color is red...
+                if(pix.getRed() < 50 && pix.getGreen() > 200 && pix.getBlue() < 50) // If color is green...
                 {
-                    image.setPixel(x, y, Color.WHITE); // Convert red pixels to white.
+                    image.setPixel(x, y, Color.WHITE); // Convert green pixels to white.
                 }
             }
         }
