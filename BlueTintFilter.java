@@ -1,7 +1,7 @@
 import java.awt.Color;
 
-/**Green Tint Filter
- * An image filter that tints the image green.
+/**Blue Tint Filter
+ * An image filter that tints the image blue.
  *
  * @author Alessandro Marucci
  * @version 04.21.2025
@@ -31,7 +31,7 @@ public class BlueTintFilter extends Filter
                 int avg = (pix.getRed() + pix.getGreen() + pix.getBlue()) / 3;
                 image.setPixel(x, y, new Color(avg, avg, avg));
                 
-                Color newColor = new Color(0, 255, 0);
+                Color newColor = new Color(0, 0, 255);
                 image.setRGB(x, y, newColor.getRGB());
             }
         }
