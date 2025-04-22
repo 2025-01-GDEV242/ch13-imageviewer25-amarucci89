@@ -28,13 +28,8 @@ public class RedChannelFilter extends Filter
         for(int y = 0; y < height; y++) {
             for(int x = 0; x < width; x++) {
                 Color pix = image.getPixel(x, y);
-                int avg = (pix.getRed() + pix.getGreen() + pix.getBlue()) / 3;
-                image.setPixel(x, y, new Color(avg, avg, avg));
-                
-                if(pix.getRed() > 200 && pix.getGreen() < 50 && pix.getBlue() < 50) // If color is red...
-                {
-                    image.setPixel(x, y, Color.WHITE); // Convert red pixels to white.
-                }
+                int redPixelVal = (pix.getRed());
+                image.setPixel(x, y, new Color(redPixelVal, redPixelVal, redPixelVal));
             }
         }
     }
